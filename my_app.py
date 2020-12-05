@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -8,9 +8,19 @@ def index():
     return 'Hello World'
 
 
-def main():
-    app.run(debug=True)
+@app.route('/address search')
+def address_search():
+    zipcode = request.args.get('zipcode')
 
+    return f'address searchdayo'
+    {zipcode =}
 
-if __name__ == '__main__':
-    main()
+    @app.route('/shout/<string:name>')
+    def shout(name: str):
+        return f' {name}!!!'
+
+    def main():
+        app.run(debug=True)
+
+    if __name__ == '__main__':
+        main()
